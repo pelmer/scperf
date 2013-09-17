@@ -56,39 +56,86 @@ Goals of software and computing:
 \section{Software Applications} 
 Describe what are we trying to do with the computing:
 \begin{itemize}
+
 \item Trigger (how much of this is ``us''?  HLT?)
+% CHEP 2013 	"The CMS High Level Trigger" D. Troncino
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7050
+
 \item Reconstruction
+% CHEP13 "The Role of Effective Event Reconstruction in the Higgs Boson Discovery at CMS", S. Krutelyov
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7258
+
 \item Analysis
+
 \item MC simulation
+% CHEP13 - there is both a fastsim talk and a fullsim talk, but I think
+% we combined these. I'm confused by what we have in Cinco, will double
+% check on CHEP13 site (I'm one of the track coordinators for that CHEP track)
+
 \item Calibration/alignment
+% CHEP13 "Alignment and calibration of CMS detector during collisions at LHC" R.Castello
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7170
+
 \item I considered also things like data management here, but that strictly speaking isn't something needed to get a physics result, which I think is what this section is about.  Anything missing from the list?
 \end{itemize}
 
 
 \section{Software Implementation}
 \begin{itemize}
+
 \item Software development model
+
 \item Framework architecture 
+% Perhaps some of the text can come from the paper about the new
+% framework evolution:
+% CHEP13 "Stitched Together: Transitioning CMS to a Hierarchical Threaded Framework" C. Jones
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7110
+% or perhaps there are older CHEP papers.
+
 \item Software architecture and evolution
+
 \item ``Performance'' numbers (code base size, number of developers, etc.) 
 over time, major releases
+
 \item Software and Release validation
+% CHEP13 "The Rise of the Build Infrastructure" G.Eulisse
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/conf_display.aspx?cid=1085
+
 \item Evolution with architectures (32bit/64bit, compilers)
+% Various ACAT/CHEP presentations from P.Elmer, M.Kortelainen
+
 \item CPU and I/O optimization?
+% Various ACAT/CHEP presentations from P.Elmer, M.Kortelainen
+
 \end{itemize}
 
 
 \section{Computing Implementation} 
 (Not sure if ordering is quite right..)
+
+% CHEP13 "CMS Computing Operations During Run1" O.Gutsche
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7055
+
 \begin{itemize}
+
 \item Distributed Model (details in practice including tier system, numbers)
+
 \item Prompt Calibration Loop (PCL)
+
 \item Operations Model (does this include site operations?)
+
 \item Data transfers/network usage
+% CHEP13 "The CMS Data Management System" N. Magini
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7057
+
 \item Data quality monitoring (or is this a software topic?)
+
 \item Data Management (design choices, implementation and performance)
+
 \item Workflow Management (design choices, implementation and performance)
+
 \item User Analysis (+ Support??)
+
 \item ``Performance'' numbers (resource usage, data sizes, analysis participation, turnaround times if that can be captured) [Or should this be integrated with other sections, somehow?  Editorial choice to consider.]
 \end{itemize}
 
