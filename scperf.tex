@@ -8,7 +8,7 @@
 
 \title{CMS Software and Computing Performance Paper (Title TBD)}
 
-\author{CMS Collaboration, editors: K.Bloom and P.Elmer}
+\author{CMS Collaboration - Editors: K.Bloom and P.Elmer}
 
 
 \begin{document}
@@ -17,15 +17,26 @@
 
 \section{Introduction}
 
-Describe physics problem (and scale), detector scale and requirements:
+\subsection {Physics goals} 
 
 \begin{itemize}
+\item describe quantitatively the scale required to reach physics goals
 \item Higgs~\cite{CMSHIGGS} as possible example physics problem, should (briefly!) run through all the S\&C needs to do the physics analysis.  (At the very least, Higgs provides the example of quick turnaround of physics -- when was the last data taken before 4/7/12 Higgs announcement?)  Is there another physics problem that has some contrasting requirements?  Another physics requirement -- must get results out fast due to competition and great community interest!
 \end{itemize}
 
-Describe Software and Computing limitations and challenges, requirements of distributed development and distributed computing facilities:
+\subsection{The Large Hadron Collider and the CMS detector}
 
 \begin{itemize}
+\item Scale and requirements of the LHC
+\item Scale and requirements of the CMS detector
+\item Event size, Pile-Up (e.g. effect on multiplicities, etc.)
+\end{itemize}
+
+\subsection{Software and Computing System} 
+
+\begin{itemize}
+\item Describe the major limitations and challenges in building the S\&C system
+\item requirements of distributed development and distributed computing facilities:
 \item These include: large group of code developers whose are ultimately novice coders, wide geographical distribution of developers, highly distributed computing resources too, newfangled grid system that had to be shaken down, very distributed and ultimately novice-coder analysts! (I think we should be covering analysis in here too)...what else do we need to add to this list?
 \end{itemize}
 
@@ -42,7 +53,8 @@ Goals of software and computing:
 \end{itemize}
 
 
-\section{Application Domain -- what are we trying to do with the computing?}
+\section{Software Applications} 
+Describe what are we trying to do with the computing:
 \begin{itemize}
 \item Trigger (how much of this is ``us''?  HLT?)
 \item Reconstruction
@@ -53,16 +65,21 @@ Goals of software and computing:
 \end{itemize}
 
 
-\section{Software challenges and choices}
+\section{Software Implementation}
 \begin{itemize}
 \item Software development model
+\item Framework architecture 
 \item Software architecture and evolution
-\item ``Performance'' numbers (size, number of developers, etc.) over time
-\item With all due respect, this sounds a little short.  What else should go in here?  Release validation?  (Part of software development?)  CPU and I/O optimization?
+\item ``Performance'' numbers (code base size, number of developers, etc.) 
+over time, major releases
+\item Software and Release validation
+\item Evolution with architectures (32bit/64bit, compilers)
+\item CPU and I/O optimization?
 \end{itemize}
 
 
-\section{Computing Implementation (not sure if ordering is quite right)}
+\section{Computing Implementation} 
+(Not sure if ordering is quite right..)
 \begin{itemize}
 \item Distributed Model (details in practice including tier system, numbers)
 \item Prompt Calibration Loop (PCL)
