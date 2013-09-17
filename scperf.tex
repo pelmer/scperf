@@ -1,0 +1,90 @@
+\documentclass [draft,notitlepage] {article}
+\usepackage[margin=1.0in,nohead,nofoot]{geometry}
+\usepackage{url}
+\usepackage{hyperref}
+\pagestyle{empty}
+\newcommand\myurl[2]{\url{#1}}
+\newcommand\email[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+\title{CMS Software and Computing Performance Paper (Title TBD)}
+
+\author{CMS Collaboration, editors: K.Bloom and P.Elmer}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Describe physics problem (and scale), detector scale and requirements:
+
+\begin{itemize}
+\item Higgs~\cite{CMSHIGGS} as possible example physics problem, should (briefly!) run through all the S\&C needs to do the physics analysis.  (At the very least, Higgs provides the example of quick turnaround of physics -- when was the last data taken before 4/7/12 Higgs announcement?)  Is there another physics problem that has some contrasting requirements?  Another physics requirement -- must get results out fast due to competition and great community interest!
+\end{itemize}
+
+Describe Software and Computing limitations and challenges, requirements of distributed development and distributed computing facilities:
+
+\begin{itemize}
+\item These include: large group of code developers whose are ultimately novice coders, wide geographical distribution of developers, highly distributed computing resources too, newfangled grid system that had to be shaken down, very distributed and ultimately novice-coder analysts! (I think we should be covering analysis in here too)...what else do we need to add to this list?
+\end{itemize}
+
+Goals of software and computing:
+
+\begin{itemize}
+\item Software development model must incorporate the work of many geographically distributed coders
+\item Software must run on all necessary architectures, must be robust against potentially fragile computing facilities
+\item Software needs to be able to run at a scale needed to turn around results quickly
+\item Computing must run the software at the sufficient scale
+\item Computing must make the best use of all available resources
+\item Computing must make the data and computing resources available to all analysts
+\item In general, software and computing should never limit the rate of the production of physics results and papers (``factory'' latency) Do we have a way of demonstrating this actually happened?
+\end{itemize}
+
+
+\section{Application Domain -- what are we trying to do with the computing?}
+\begin{itemize}
+\item Trigger (how much of this is ``us''?  HLT?)
+\item Reconstruction
+\item Analysis
+\item MC simulation
+\item Calibration/alignment
+\item I considered also things like data management here, but that strictly speaking isn't something needed to get a physics result, which I think is what this section is about.  Anything missing from the list?
+\end{itemize}
+
+
+\section{Software challenges and choices}
+\begin{itemize}
+\item Software development model
+\item Software architecture and evolution
+\item ``Performance'' numbers (size, number of developers, etc.) over time
+\item With all due respect, this sounds a little short.  What else should go in here?  Release validation?  (Part of software development?)  CPU and I/O optimization?
+\end{itemize}
+
+
+\section{Computing Implementation (not sure if ordering is quite right)}
+\begin{itemize}
+\item Distributed Model (details in practice including tier system, numbers)
+\item Prompt Calibration Loop (PCL)
+\item Operations Model (does this include site operations?)
+\item Data transfers/network usage
+\item Data quality monitoring (or is this a software topic?)
+\item Data Management (design choices, implementation and performance)
+\item Workflow Management (design choices, implementation and performance)
+\item User Analysis (+ Support??)
+\item ``Performance'' numbers (resource usage, data sizes, analysis participation, turnaround times if that can be captured) [Or should this be integrated with other sections, somehow?  Editorial choice to consider.]
+\end{itemize}
+
+
+\section{Conclusion}
+Would be good to get back to the physics -- discuss cases where we got results out quick (Higgs), turned around new samples quickly, got new releases or calibrations out fast.  These are ultimately the measures of our success!  Or put another way, here is where we should clearly emphasize that we’ve met some of the goals described earlier.
+
+
+
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
+
