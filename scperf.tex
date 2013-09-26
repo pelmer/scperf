@@ -61,6 +61,10 @@ Describe what are we trying to do with the computing:
 % CHEP 2013 	"The CMS High Level Trigger" D. Troncino
 % https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7050
 
+% CHEP12 "The CMS High Level Trigger System: Experience and Future
+% Development" A. Sparatu
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4520
+
 \item Reconstruction
 % CHEP13 "The Role of Effective Event Reconstruction in the Higgs Boson Discovery at CMS", S. Krutelyov
 % https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7258
@@ -107,38 +111,100 @@ over time, major releases
 \item CPU and I/O optimization?
 % Various ACAT/CHEP presentations from P.Elmer, M.Kortelainen
 
+\item Documentation?
+% Surely we have documentation?
+% CHEP12 "Developing CMS software documentation system" M. Stankevicius
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4506
+
 \end{itemize}
 
 
 \section{Computing Implementation} 
 (Not sure if ordering is quite right..)
 
-% CHEP13 "CMS Computing Operations During Run1" O.Gutsche
-% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7055
 
 \begin{itemize}
 
 \item Distributed Model (details in practice including tier system, numbers)
 
 \item Prompt Calibration Loop (PCL)
+% CHEP12 "Handling of time-critical Conditions Data in the CMS experiment -
+% Experience of the first year of data taking" G. Govi
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4571
 
 \item Operations Model (does this include site operations?)
+% CHEP13 "CMS Computing Operations During Run1" O.Gutsche
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7055
+
+% CHEP12 "Towards a global monitoring system for CMS computing operations"
+% A. Sciaba
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4445
+% CHEP12 "CMS Tier-0: Preparing for the future" D. Hufnagel
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4424
 
 \item Data transfers/network usage
 % CHEP13 "The CMS Data Management System" N. Magini
 % https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=1085&pid=7057
 
+% CHEP12 "CMS Data Transfer operations after the first years of LHC
+% collisions" R. Kaselis
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4537
+
 \item Data quality monitoring (or is this a software topic?)
+
+\item Databases
+% CHEP12  "Comparison of the Frontier Distributed Database Caching System with NoSQL Databases" D. Dykstra
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4418
+
+% CHEP12 "CMS experience with online and offline Databases" A. Pfeiffer
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4444
 
 \item Data Management (design choices, implementation and performance)
 
 \item Workflow Management (design choices, implementation and performance)
+% CHEP12 "The CMS workload management system" S. Wakefield
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4454
+
+% CHEP12 "A new era for central processing and production in CMS"
+% E. Fajardo Hernandez
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4402
 
 \item User Analysis (+ Support??)
+% CHEP12 "CMS Analysis Deconstructed" S. Malik
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4399
 
 \item ``Performance'' numbers (resource usage, data sizes, analysis participation, turnaround times if that can be captured) [Or should this be integrated with other sections, somehow?  Editorial choice to consider.]
 \end{itemize}
 
+\section{Anticipated Evolution for Run 2}
+\begin{itemize}
+\item Multithreaded framework
+%CHEP12 "Study of a Fine Grained Threaded Framework Design" C. Jones
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4396
+
+%CHEP12 "Multi-core processing and scheduling performance in CMS"
+%J. Hernandez
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4365
+
+\item Software engineering efforts
+%CHEP12 "Development and Evaluation of Vectorised and Multi-Core Event
+%Reconstruction Algorithms within the CMS Software Framework" D. Piparo
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4546
+
+\item Evolution of tiered computing model
+% CHEP12 "Evolution of the Distributed Computing Model of the CMS
+% experiment at the LHC" C. Grandi
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4347
+
+\item Use of data federations, changes in data distribution
+%CHEP12 "Implementing data placement strategies for the CMS experiment
+%based on a popularity mode" D. Giordano
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4443
+\item Efforts on opportunistic resources
+% CHEP12 "Controlled overflowing of data-intensive jobs from oversubscribed
+% sites" I. Sfiligoi
+% https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=665&pid=4419
+\end{itemize}
 
 \section{Conclusion}
 Would be good to get back to the physics -- discuss cases where we got results out quick (Higgs), turned around new samples quickly, got new releases or calibrations out fast.  These are ultimately the measures of our success!  Or put another way, here is where we should clearly emphasize that we’ve met some of the goals described earlier.
