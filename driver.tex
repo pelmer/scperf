@@ -1,10 +1,15 @@
-\documentclass [draft,notitlepage] {article}
+\documentclass [notitlepage] {article}
 \usepackage[margin=1.0in,nohead,nofoot]{geometry}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{color}
 \pagestyle{empty}
 \newcommand\myurl[2]{\url{#1}}
 \newcommand\email[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+\newcommand{\fixme}[1]{\textcolor{red}{FIXME: #1}\marginpar{\textcolor{red}{\textbf{F}}}}
+%\renewcommand{\fixme}[1]{}
+
 
 \title{CMS Software and Computing Performance Paper (Title TBD)}
 
@@ -20,7 +25,7 @@
   described.  Planned changes for Run 2 are also discussed.  Real abstract
   to be written later.  }
 
-\input{content.tex}
+\input{content}
 
 \bibliographystyle{unsrt}
 \bibliography{references}
