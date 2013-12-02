@@ -37,18 +37,20 @@ experiment's computing systems and their operation.
 The CMS distributed computing infrastructure is a tiered set of computing
 sites connected through networks that follows the MONARC
 model~\cite{MONARC}. The computing infrastructure is organized in a
-hierarchy starting with CERN at its origin called Tier 0 (T0).  On the next
-level, seven regional computing centers called Tier-1 (T1) sites form the
-backbone of the system, followed by Tier-2 (T2) and Tier-3 (T3) sites at
-universities and/or research institutes.  
+hierarchy starting with CERN facility, called Tier 0 (T0), at its origin.
+On the next level, seven regional computing centers called Tier-1 (T1)
+sites form the backbone of the system, followed by Tier-2 (T2) and Tier-3
+(T3) sites at universities and/or research institutes.
 
 Sites at each tier in the hierarchy are responsible for performing certain
 workflows, and the sites are configured to support those particular
-workflows.  The T0 site is responsible for data recording and first-pass
-(``prompt'') data reconstruction, and also for performing calibrations that
-are needed for the reconstruction.  Prompt reconstruction starts 48 hours
-after events have been recorded to incorporate updated calibrations.  The
-production of calibration constants is described in
+workflows.  \fixme{In fact, the description of the workflows might take
+  place in the ``applications'' section, we'll see, but keep some
+  information here for now.}  The T0 site is responsible for data recording
+and first-pass (``prompt'') data reconstruction, and also for performing
+calibrations that are needed for the reconstruction.  Prompt reconstruction
+starts 48 hours after events have been recorded to incorporate updated
+calibrations.  The production of calibration constants is described in
 Section~\ref{sec:constants}.  All events are stored in the RAW format on
 tape at the T0 site.  \fixme{We'll need to be sure that RAW etc. are
   defined earlier on; this sounds like software.}  The T0 facility thus
@@ -57,59 +59,53 @@ the CMS T0 facility had \fixme{Get all the T0 parameters!}.
 
 The primary workflows at T1 sites are the simulation of events and the
 re-reconstruction of both detector and simulation events.  Simulation is a
-processing-intensive workflow, requires little or no input data, but has
-large output data.  Re-reconstruction of the data and simulation samples is
-performed when changes to reconstruction algorithms and/or calibrations are
-sufficiently different from those of the prompt reconstruction to have a
-significant impact on understanding the physics of the LHC collisions.  The
-re-reconstruction workflow also requires substantial processing resources,
-and both the input and output data sizes are large.  In addition, the T1
-sites are responsible for maintaining a second archived copy of the data in
-RAW format, so that between the T0 and T1 sites, there are two tape copies
-of every event.  CMS operated seven T1 sites during Run 1, hosted by
-Germany, Spain, France, Italy, Taiwan, the United Kingdom and the United
-States.  At the end of the run, the aggregated Tier 1 resources were
-\fixme{Get all the T1 parameters!  Do we discuss relative sizes of sites?
-  Mention the hosting institutions?}
+processing-intensive workflow that requires little or no input data, but
+has large output data.  Re-reconstruction of the data and simulation
+samples is performed when changes to reconstruction algorithms and/or
+calibrations are sufficiently different from those of the prompt
+reconstruction to have a significant impact on understanding the physics of
+the LHC collisions.  The re-reconstruction workflow also requires
+substantial processing resources, and both the input and output data sizes
+are large.  In addition, the T1 sites are responsible for maintaining a
+second archived copy of the data in RAW format, so that between the T0 and
+T1 sites, there are two tape copies of every event.  To fulfill all of
+these missions, T1 sites must host processing, disk and tape resources.
+CMS operated seven T1 sites during Run 1, hosted by Germany, Spain, France,
+Italy, Taiwan, the United Kingdom and the United States.  At the end of the
+run, the aggregated Tier 1 resources were \fixme{Get all the T1 parameters!
+  Do we discuss relative sizes of sites?  Mention the hosting
+  institutions?}
 
 T2 sites are also responsible for some simulation workflows, and also for
 analysis of data and simulation samples by physics users; no user analysis
-takes place at T0 or T1.  The input datasets for analysis is distributed to
-the sites in advance, and then jobs seeking to analyze a particular dataset
-are sent to a site that hosts the data.  While the input data for analysis
-is typically large, the output is usually several orders of magnitude
-smaller, as users reduce and refine the data to meet their specific
-interests and needs.  \fixme{Give some typical sizes for these?  Does such
-  a thing exist?}  T2 sites do no archival storage, so are only required to
-deploy disk and processing resources.  In Run 1, there were about fifty T2
-sites, which in aggregate provided \fixme{Get all the T2 parameters!}.
+takes place at T0 or T1.  The input datasets for analysis are distributed
+to the sites in advance, and then jobs seeking to analyze a particular
+dataset are sent to a site that hosts the data.  While the input data for
+analysis is typically large, the output is usually several orders of
+magnitude smaller, as users reduce and refine the data to meet their
+specific interests and needs.  \fixme{Give some typical sizes for these?
+  Does such a thing exist?  Will it be elsewhere?}  T2 sites do no archival
+storage, so are only required to deploy disk and processing resources.  In
+Run 1, there were about fifty T2 sites, which in aggregate provided
+\fixme{Get all the T2 parameters!}.  An important distinction between T2
+sites and those at T0 and T1 is that the former only offer business-hour
+site support and are unattended in between.
 
-An important distinction between T2 sites and those at T0 and T1 is that
-the latter were used by a small number of operators for centrally-organized
-production tasks.  The T2 sites were used by physicists throught the
-collaboration in a ``chaotic'' mode.  Thousands of users might submit jobs
-to any given site.  To maintain scalability of management, users do not
-directly log in to computers at the sites, but instead submit jobs through
-grid technologies~\cite{thegrid}.  A computing grid is an infrastructure
-that allows different administrative domains to share access to services,
-processors and storage with a select set of users and groups of users. The
-computing sites that are members of a grid provide a uniform environment
-for user batch jobs, even if each cluster has some unique local
-configuration.  As a result, any user job can, in principle, be executed at
-any site on the grid with little user customization required.  Users of the
-grid resources are issued credentials that can be attached to a batch job
-when it is submitted to a resource; these credentials allow for the
-tracking of jobs back to individual users.  CMS sites operated using three
-different grid technologies.  [NOW HERE -- cite EGI, OSG and ARC.]
+T3 sites are owned and managed by individual institutes, at a support level
+of their choosing, and they execute workflows of their choosing.  T3 sites
+are most often used for final-stage data analysis by the local users of the
+site.  There is no set configuration for the T3 sites.
 
-All sites are interconnected via
-dedicated or general purpose scientific networks. The original design
-separated the T2 sites into groups that were associated and connected
-to only one T1. During LHC Run 1, the strength and reliability of the
-networks allowed for a more flexible setup, realizing a full-mesh network
-topology where every T2 site is connected to every T1 site and
-every other T2 site, as shown in Figure~\ref{fig:distributed_topology}.
-
+For all of the workflows, the input data must reside at the site where the
+workflow is executed.  In many cases the data needs to be transferred from
+another site.  All sites are interconnected via dedicated or general
+purpose scientific networks. The original design separated the T2 sites
+into groups that were associated and connected to only one T1. During LHC
+Run 1, the strength and reliability of the networks allowed for a more
+flexible setup, realizing a full-mesh network topology where every T2 site
+is connected to every T1 site and every other T2 site, as shown in
+Figure~\ref{fig:distributed_topology}.
+ 
 \begin{figure}
 \begin{center}
 \includegraphics[width=.5\textwidth]{figs/distributed_topology}
@@ -117,15 +113,6 @@ every other T2 site, as shown in Figure~\ref{fig:distributed_topology}.
 \caption{The tiered CMS computing infrastructure showing the Tier-0, Tier-1 and Tier-2 levels interconnected with dedicated or general purpose scientific networks in a full-mesh network topology.
   \label{fig:distributed_topology}}
 \end{figure}
-
-T1 sites provide access to large CPU farms and a mass storage system
-(MSS) with disk caches and tape libraries. They are different from T2
-sitess in two main aspects. T1 sites provide continuous (``24/7'')
-support operation, while T2 sites are operated during business hours
-and unattended in between. In addition, T2 sites do not have tape
-libraries at the sites and operate purely with disk caches.  T3 sites
-are owned and managed by individual institutes, at a support level of their
-choosing.
 
 The network between the sites is the backbone of the CMS computing
 infrastructure, as its operation relies on transferring files among the
@@ -137,3 +124,60 @@ separated into archiving and serving. Archiving is tape based where related
 files are grouped by physics content on separate sets of tape cartridges
 (known as tape families) to optimize writing, recall, and
 recycling. Serving is disk based. The main data flows are as follows:
+
+\begin{itemize}
+\item {\bf T0 $\to$ T1}: RAW data recorded by the detector is recorded at
+  T0 and stored on tape as a ``cold'' backup replica. The RAW is
+  distributed across the T1's via the LHCOPN network links and archived on
+  tape. The tape replica at the T1's can be recalled at any time and is
+  called the custodial replica. The mass storage system at the T1's also
+  provides caching capabilities and the files from the current year of data
+  taking are kept cached.
+
+\item {\bf T1 $\to$ T1}: Both RAW and simulated data are reconstructed for
+  analysis on the T1 level. This requires especially strong I/O
+  capabilities. The resulting AOD holds the minimum amount of information
+  needed for analysis and is archived at the Tier-1 that stored the
+  custodial tape copy of the input data.
+
+\item {\bf T1 $\to$ T2}: As data of all formats is archived at T1 sites,
+  which do not allow access by regular analysis users, any dataset that an
+  analysis user requires must be transferred to a T2 site.  T2 disk is
+  logically separated into managed portions for common samples and
+  unmanaged areas for files belonging to individual users and physics
+  groups.
+
+\item {\bf T2 $\to$ T1}: The output of the simulation of a specific physics
+  process at a T2 site is consolidated at a Tier-1 site where it is stored
+  on tape.
+\end{itemize}
+
+
+An important distinction between T2 sites and those at T0 and T1 is that
+the latter were used by a small number of operators for centrally-organized
+production tasks.  The T2 sites were used by physicists throught the
+collaboration in a ``chaotic'' mode.  Thousands of users might submit jobs
+to any given site.  To maintain scalability of management, users do not
+directly log in to computers at the sites, but instead submit jobs from
+their local login machine through grid technologies~\cite{thegrid}.  A
+computing grid is an infrastructure that allows different administrative
+domains to share access to services, processors and storage with a select
+set of users and groups of users. The computing clusters that are members
+of a grid provide a uniform environment for user batch jobs, even if each
+cluster has some unique local configuration.  As a result, any user job
+can, in principle, be executed at any site on the grid with little user
+customization required.  Users of the grid resources are issued credentials
+that can be attached to a batch job when it is submitted to a resource;
+these credentials allow for the tracking of jobs back to individual users.
+
+The technology used to operate grid sites is known as ``middleware,'' as it
+has a role that is somewhere between the actual hardware that operates at a
+site and the software that is run by user applications.  CMS sites operated
+using three different varieties of middleware.  Most sites in Europe and
+Asia used the Euopean Grid Infrastructure (EGI)~\cite{EGI} middleware,
+while a few sites in Northern Europe used the Advanced Resource Connector
+(ARC)~\cite{ARC} middleware.  Sites in the Western Hemisphere were part of
+the Open Science Grid (OSG)~\cite{OSG}.  All sites were members of the
+Worldwide LHC Computing Grid (WLCG)~\cite{WLCG}, which developed a number
+of common applications for the LHC experiments.
+
