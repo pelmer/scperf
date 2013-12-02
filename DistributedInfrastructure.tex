@@ -100,12 +100,16 @@ For all of the workflows, the input data must reside at the site where the
 workflow is executed.  In many cases the data needs to be transferred from
 another site.  All sites are interconnected via dedicated or general
 purpose scientific networks. The original design separated the T2 sites
-into groups that were associated and connected to only one T1. During LHC
-Run 1, the strength and reliability of the networks allowed for a more
+into groups that were associated with and connected to only one T1. During
+LHC Run 1, the strength and reliability of the networks allowed for a more
 flexible setup, realizing a full-mesh network topology where every T2 site
 is connected to every T1 site and every other T2 site, as shown in
-Figure~\ref{fig:distributed_topology}.
- 
+Figure~\ref{fig:distributed_topology}.  The full-mesh network allowed for
+much greater ease in data movement, as a given T2 site could receive data
+from a large number of potential source sites, and greater flexibility in
+operations, as it was easier to move a particular dataset to a given site
+so that the necessary workflows could be performed there.
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=.5\textwidth]{figs/distributed_topology}
@@ -152,7 +156,6 @@ recycling. Serving is disk based. The main data flows are as follows:
   on tape.
 \end{itemize}
 
-
 An important distinction between T2 sites and those at T0 and T1 is that
 the latter were used by a small number of operators for centrally-organized
 production tasks.  The T2 sites were used by physicists throught the
@@ -179,5 +182,22 @@ while a few sites in Northern Europe used the Advanced Resource Connector
 (ARC)~\cite{ARC} middleware.  Sites in the Western Hemisphere were part of
 the Open Science Grid (OSG)~\cite{OSG}.  All sites were members of the
 Worldwide LHC Computing Grid (WLCG)~\cite{WLCG}, which developed a number
-of common applications for the LHC experiments.
+of common applications for the LHC experiments.  In practice, CMS developed
+a number of applications that ran on top of the middleware, to make it
+easier for users to access information about the data catalogue and
+calibration constants that needed to be passed to the computers that
+executed the jobs.  These are described in Section\fixme{Probably the
+  Workflow Execution section, but need to see how this rolls out}.
+
+This physical infrastructure of the computing sites and the wide area
+network, plus the middleware infrastructure of the grid, requires a large
+number of services and applications that make it useful for the CMS
+workflows.  These are described in the remainder of this section.
+Section~\ref{sec:corecomponents} describes the services needed for the
+creation and distribution of calibration constants, data transfers, data
+management, software distribution, and job submission.
+Section~\ref{sec:compops} discusses the operations model for the
+infrastructure, and the tools needed to monitor sites and jobs.
+Section~\ref{sec:workflow} describes the management of both production and
+analysis workflows.
 
