@@ -19,20 +19,21 @@
 % https://cms-mgt-conferences.web.cern.ch/cms-mgt-conferences/conferences/pres_display.aspx?cid=462&pid=2264
 
 From the very start, CMS planned on having a distributed computing
-infrastructure.  While HEP collaborations have historically relied on a
-single large computational resource located at the host laboratory for
-virtually all of their data processing and storage needs, and while a
-single facility would have ultimately been more efficient to operate, it
-was not considered feasible to ask the nations of the LHC experimental
+infrastructure, with processing and storage resources distribued around the
+world.  While HEP collaborations have historically relied on a single large
+computational resource located at the host laboratory for virtually all of
+their data processing and storage needs, and while a single facility would
+have ultimately been more efficient to operate, it was not considered
+feasible to ask the nations represented in the LHC experimental
 collaborations to contribute funds for a computing center at CERN.
 Instead, each nation has established domestically owned and operated sites
-that contribute to the LHC experiments' computing needs.  These sites,
-distributed around the world, have given greater prominence to the LHC
-experiments within their participating nations, which has led to greater
-funding and more engagement from local computing experts, who would not
-have had a chance to participate had all the computing been done at CERN.
-CMS has successfully leveraged this local expertise to improve the
-experiment's computing systems and their operation.
+that contribute to the LHC experiments' computing needs.  These sites, have
+given greater prominence to the LHC experiments within their participating
+nations, which has led to greater funding and more engagement from local
+computing experts, who would not have had a chance to participate had all
+the computing been done at CERN.  CMS has successfully leveraged this local
+expertise to improve the experiment's computing systems and their
+operation.
 
 The CMS distributed computing infrastructure is a tiered set of computing
 sites connected through networks that follows the MONARC
@@ -58,25 +59,25 @@ needs substantial processing and storage resources.  At the end of Run 1,
 the CMS T0 facility had \fixme{Get all the T0 parameters!}.
 
 The primary workflows at T1 sites are the simulation of events and the
-re-reconstruction of both detector and simulation events.  Simulation is a
+re-reconstruction of both detector and simulated events.  Simulation is a
 processing-intensive workflow that requires little or no input data, but
 has large output data.  Re-reconstruction of the data and simulation
 samples is performed when changes to reconstruction algorithms and/or
-calibrations are sufficiently different from those of the prompt
-reconstruction to have a significant impact on understanding the physics of
-the LHC collisions.  The re-reconstruction workflow also requires
-substantial processing resources, and both the input and output data sizes
-are large.  In addition, the T1 sites are responsible for maintaining a
-second archived copy of the data in RAW format, so that between the T0 and
-T1 sites, there are two tape copies of every event.  To fulfill all of
-these missions, T1 sites must host processing, disk and tape resources.
-CMS operated seven T1 sites during Run 1, hosted by Germany, Spain, France,
-Italy, Taiwan, the United Kingdom and the United States.  At the end of the
-run, the aggregated Tier 1 resources were \fixme{Get all the T1 parameters!
-  Do we discuss relative sizes of sites?  Mention the hosting
-  institutions?}
+calibrations result in reconstruction output that is sufficiently different
+from that of the prompt reconstruction to have a significant impact on
+understanding the physics of the LHC collisions.  The re-reconstruction
+workflow also requires substantial processing resources, and both the input
+and output data sizes are large.  In addition, the T1 sites are responsible
+for maintaining a second archived copy of the data in RAW format, so that,
+between the T0 and T1 sites, there are two tape copies of every event.  To
+fulfill all of these missions, T1 sites must host processing, disk and tape
+resources.  CMS operated seven T1 sites during Run 1, hosted by Germany,
+Spain, France, Italy, Taiwan, the United Kingdom and the United States.  At
+the end of the run, the aggregated Tier 1 resources were \fixme{Get all the
+  T1 parameters!  Do we discuss relative sizes of sites?  Mention the
+  hosting institutions?}
 
-T2 sites are also responsible for some simulation workflows, and also for
+T2 sites are also responsible for some simulation workflows, and for
 analysis of data and simulation samples by physics users; no user analysis
 takes place at T0 or T1.  The input datasets for analysis are distributed
 to the sites in advance, and then jobs seeking to analyze a particular
@@ -119,7 +120,7 @@ so that the necessary workflows could be performed there.
 \end{figure}
 
 The network between the sites is the backbone of the CMS computing
-infrastructure, as its operation relies on transferring files among the
+infrastructure, whose operation relies on transferring files among the
 sites for access. The network between the T0 and T1 sites is the dedicated
 LHC Optical Private Network (LHCOPN).~\fixme{Does this get a
   reference?}. The T2 sites are connected through general purpose
@@ -171,7 +172,8 @@ cluster has some unique local configuration.  As a result, any user job
 can, in principle, be executed at any site on the grid with little user
 customization required.  Users of the grid resources are issued credentials
 that can be attached to a batch job when it is submitted to a resource;
-these credentials allow for the tracking of jobs back to individual users.
+these credentials allow for the tracking of jobs back to individual users
+and thus help maintain the cybersecurity of the participating clusters.
 
 The technology used to operate grid sites is known as ``middleware,'' as it
 has a role that is somewhere between the actual hardware that operates at a
